@@ -49,7 +49,7 @@ router.get('/:id', (req, res) => {
   })
   .then(data => {
     if (!data) {
-      res.status(404).json({message: 'No product found with this id.'});
+      res.status(404).json({message: 'No product found with this ID.'});
       return;
     }
 
@@ -76,13 +76,13 @@ router.post('/', (req, res) => {
     .then((product) => {
       // if there's product tags, we need to create pairings to bulk create in the ProductTag model
       if (req.body.tagIds.length) {
-        const productTagIdArr = req.body.tagIds.map((tag_id) => {
+        const productTags = req.body.tagIds.map((tag_id) => {
           return {
             product_id: product.id,
             tag_id,
           };
         });
-        return ProductTag.bulkCreate(productTagIdArr);
+        return ProductTag.bulkCreate(productTags);
       }
       // if no product tags, just respond
       res.status(200).json(product);
@@ -145,7 +145,7 @@ router.delete("/:id", (req, res) => {
   })
   .then(productData => {
     if (!productData) {
-      rs.status(404).json({message: 'No product found with this id.'});
+      rs.status(404).json({message: 'No product found with this ID.'});
       return;
     }
     res.json(productData);
