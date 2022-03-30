@@ -1,6 +1,13 @@
 # ecommerce_backend
 A command line program to organize products for an e commerce store
 
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Tests](#tests)
+- [Questions](#questions)
+- [Sources](#sources)
+
 ## Description
 AS A manager at an internet retail company
 I WANT a back end for my e-commerce website that uses the latest technologies
@@ -32,4 +39,28 @@ THEN I am able to successfully create, update, and delete data in my database
 7. Enter password
 8. Command `SOURCE db/schema.sql`
 9. Command `USE db ecommerce_db`
+
+## Usage
+Users can use an app, such as Insomnia, mySQL workbench, TablesPlus, etc. or mySQL queries in the command line to update the database with products, categoreis, and tags. 
+
+Product belongs to Category, and Category has many Product models, as a category can have multiple products but a product can only belong to one category.
+
+Product belongs to many Tag models, and Tag belongs to many Product models. Allow products to have multiple tags and tags to have many products by using the ProductTag through model.
+
+The following video shows the functionality of the program:
+[Link to Video](https://drive.google.com/file/d/1k17pnJk1FzgqdDTu4jTtshsE4RH3HkeG/view)
+
+## Tests
+For testing, make sure to run command `npm start seed` to seed the test data in to the database.
+
+## Questions?
+
+Contact Info:
+
+Github profile: emmareimer
+
+Email: emma@beinproximity.com
+
+## Sources, Libraries, and Languages
+Nodejs, Javascript, MySQL, Sequelize
 
